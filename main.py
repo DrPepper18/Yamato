@@ -6,24 +6,7 @@ token = open('private_data.txt').readline()[:-1]
 bot = telebot.TeleBot(token)
 
 startup = ' '.join(open('startup.txt', encoding='utf-8').readlines())
-links = {
-    'Мероприятия': [
-        ['МТС True Tech Champ', 'https://t.me/bluscreendez/246'],
-        ['DANO', 'https://t.me/bluscreendez/354'],
-        ['ОММО', 'https://t.me/bluscreendez/444'],
-        ['НТО АБП. 2023-2024', 'https://t.me/bluscreendez/480'],
-    ],
-    'Куда занесло': [
-        ['Яндекс (главный офис)', 'https://t.me/bluscreendez/69'],
-        ['Яндекс (Москва-Сити)', 'https://t.me/bluscreendez/140'],
-        ['Тинькофф (Водный стадион)', 'https://t.me/bluscreendez/81'],
-        ['Т-Space', 'https://t.me/bluscreendez/464'],
-        ['VK', 'https://t.me/bluscreendez/431'],
-        ['МИСиС', 'https://t.me/bluscreendez/538'],
-        ['МТС', 'https://t.me/bluscreendez/666'],
-    ],
-    'Мемасы': []
-}
+links = {}
 
 
 @bot.message_handler(commands=['start'])
@@ -32,7 +15,6 @@ def start_message(message):
 
 
 @bot.message_handler(commands=['update'])
-
 def button_message(message):
     bot.send_message(message.chat.id, 'Подождите, идёт загрузка. . .')
     def update_groups():
